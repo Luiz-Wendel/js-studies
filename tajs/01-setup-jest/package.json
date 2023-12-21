@@ -1,0 +1,23 @@
+{
+  "name": "01-setup-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "JS",
+    "jest"
+  ],
+  "author": "luiz-wendel",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "v18.19.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
