@@ -27,5 +27,35 @@ describe('Service Suite', () => {
 
       expect(result).toEqual([]);
     });
+
+    it('should return an array of users without password property', async () => {
+      const mockData = [
+        {
+          username: 'john',
+          password: '123456',
+          createdAt: new Date().toISOString(),
+        },
+        {
+          username: 'jane',
+          password: '123456',
+          createdAt: new Date().toISOString(),
+        },
+      ];
+
+      const mockedFileContent = mockData
+        .map(data => JSON.stringify(data).concat('\n'))
+        .join('');
+
+      jest.spyOn(
+        fs,
+        FUNC_NAMES.FS.READFILE,
+      ).mockResolvedValue(mockedFileContent);
+
+      const result = await _service.read();
+
+      const expected = mockData.map(({ password, ...userInfo }) => ({ ...userInfo }));
+
+      expect(result).toEqual(expected);
+    });
   });
 });
