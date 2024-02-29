@@ -57,5 +57,16 @@ describe('Service Suite', () => {
 
       expect(result).toEqual(expected);
     });
+
+    it('should throw if file does not exist', async () => {
+      const fileNotFoundError = new Error('file not found');
+
+      jest.spyOn(
+        fs,
+        FUNC_NAMES.FS.READFILE,
+      ).mockRejectedValue(fileNotFoundError);
+
+      await expect(_service.read()).rejects.toThrow(fileNotFoundError);
+    });
   });
 });
