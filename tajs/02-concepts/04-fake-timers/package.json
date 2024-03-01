@@ -1,0 +1,26 @@
+{
+  "name": "04-fake-timers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch src/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --injectGlobals false --runInBand test/",
+    "test:dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --injectGlobals false --runInBand --watchAll test/",
+    "test:debug": "node --experimental-vm-modules --inspect-brk node_modules/.bin/jest --injectGlobals false --runInBand --watchAll test/"
+  },
+  "keywords": [
+    "test",
+    "JS",
+    "jest"
+  ],
+  "author": "luiz-wendel",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "v18.19.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
