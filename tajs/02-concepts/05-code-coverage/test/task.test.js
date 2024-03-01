@@ -63,8 +63,8 @@ describe('Task Suite', () => {
       expect(tasks.at(1).fn).toHaveBeenCalled();
       expect(tasks.at(2).fn).not.toHaveBeenCalled();
 
-      // time = 14s + 5s = 19s
-      jest.advanceTimersByTime(5000);
+      // time = 14s + 1s = 15s
+      jest.advanceTimersByTime(1000);
 
       expect(tasks.at(0).fn).toHaveBeenCalled();
       expect(tasks.at(1).fn).toHaveBeenCalled();
